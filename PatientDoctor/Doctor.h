@@ -18,7 +18,6 @@
 @property (nonatomic, strong) NSMutableArray *patientsArray;
 
 
-
 - (instancetype)initDoctorWithName: (NSString *)name medicalID:(NSString *)medicalID;
 
 - (BOOL)acceptAppt: (Patient *)patient;

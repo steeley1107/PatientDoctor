@@ -11,29 +11,16 @@
 
 @implementation Patient
 
-- (instancetype)initPatientWithName: (NSString *)name medicalID:(NSString *)medicalID {
-    
+- (instancetype)initPatientWithName: (NSString *)name validHealthCard:(BOOL)validHealthCard symptoms:(NSString *)symptoms {
     self = [super init];
     if (self) {
         self.name = name;
-        self.medicalID = medicalID;
+        self.validHealthCard = validHealthCard;
+        self.symptom = symptoms;
         self.prescripts = [[NSMutableArray alloc] init];
+        
     }
     return self;
-}
-
-
-- (BOOL)visitDoctor: (Doctor *) doctor {
- 
-    return self.hasAppointment = [doctor acceptAppt: self];
-
-}
-
--(void)requestMedication: (Doctor *) doctor symptom:(NSString *)symptom{
-
-    [doctor dispenseMedicationTo: self];
-    
-
 }
 
 

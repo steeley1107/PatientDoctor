@@ -20,12 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *prescripts;
 
 
-- (instancetype)initPatientWithName: (NSString *)name medicalID:(NSString *)medicalID;
-
-- (BOOL)visitDoctor: (Doctor *) doctor;
-
--(void)requestMedication: (Doctor *) doctor symptom:(NSString *)symptom;
-
+- (instancetype)initPatientWithName: (NSString *)name validHealthCard:(BOOL)validHealthCard symptoms:(NSString *)symptoms;
 
 
 @end

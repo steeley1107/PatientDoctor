@@ -33,7 +33,7 @@
     if (patient.validHealthCard == YES) {
         [self.appointmentsArray addObject: patient];
         [self.patientsArray addObject: patient];
-        NSLog(@"An Appointment has been booked for %@",patient.name);
+        NSLog(@"%@ has booked an appointment for %@",self.name,patient.name);
         return YES;
     }
     else {
@@ -45,8 +45,11 @@
 - (BOOL)dispenseMedicationTo: (Patient *)patient {
     
     if ([self.patientsArray containsObject:patient] && [self.prescriptsSymptoms objectForKey:patient.symptom]) {
+        
+        NSString *meds = [self.prescriptsSymptoms objectForKey:patient.symptom];
         [patient.prescripts addObject:[self.prescriptsSymptoms objectForKey:patient.symptom]];
-        NSLog(@"Meds have been dispensed for %@",patient.name);
+        
+        NSLog(@"%@ meds have been dispensed for %@",meds,patient.name);
         return YES;
     }
     else {
